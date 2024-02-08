@@ -19,7 +19,7 @@ return new class extends Migration
             $table->unsignedBigInteger('faculty_id');
             $table->foreign('faculty_id')->references('id')->on('facultys');
             $table->string('lesson', 45);
-            $table->integer('sks');
+            $table->string('sks');
             $table->timestamps();
         });
     }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('faculty_id');
             $table->foreign('faculty_id')->references('id')->on('facultys');
-            $table->integer('nim');
+            $table->string('nim');
             $table->string('name', 45);
             $table->string('address');
             $table->timestamps();

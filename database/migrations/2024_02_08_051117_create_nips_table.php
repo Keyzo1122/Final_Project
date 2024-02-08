@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('nips', function (Blueprint $table) {
             $table->id();
-            $table->integer('nip');
+            $table->string('nip');
             $table->string('name', 45);
             $table->timestamps();
         });

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('nip_id')->constrained();
             $table->string('name', 45);
-            $table->integer('phone_number');
+            $table->string('phone_number');
             $table->string('address');
             $table->timestamps();
         });
