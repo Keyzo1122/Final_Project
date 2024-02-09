@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LectureController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CastController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard.index');
-});
+// Route::get('/', function () {
+//     return view('dashboard.index');
+// });
+
+
+Route::get('/lecture', [LectureController::class, "index"]);
+Route::get('/lecture/create', [LectureController::class, "create"]);
+Route::post('/api/lecture/create', [LectureController::class, "regis"]);
