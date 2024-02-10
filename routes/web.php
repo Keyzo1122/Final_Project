@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NipController;
 use App\Http\Controllers\LectureController;
-
+use App\Http\Controllers\LessonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +17,9 @@ use App\Http\Controllers\LectureController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('dashboard.index');
-// });
+Route::get('/', function () {
+    return view('dashboard.index');
+});
 
 
 Route::get('/lecture', [LectureController::class, "index"]);
@@ -31,3 +31,6 @@ Route::get('/api/lecture/{id}/del', [LectureController::class, "destroy"]);
 
 Route::get('/nip', [NipController::class, "index"]);
 Route::get('/lecture/{id}', [NipController::class, "detail"]);
+
+
+Route::resource('lesson', LessonController::class);
