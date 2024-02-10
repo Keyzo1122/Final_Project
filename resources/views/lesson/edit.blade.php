@@ -14,7 +14,7 @@
                                 @method('PUT')
                                 <div class="mb-3">
                                     <label for="lesson">Nama Mata Kuliah</label>
-                                    <input type="lesson" class="form-control" id="lesson" value="{{ $lesson->lesson }}">
+                                    <input type="lesson" name="lesson" class="form-control" id="lesson" value="{{ $lesson->lesson }}">
                                     @error('lesson')
                                         <div class="alert alert-danger">
                                             {{ $message }}
@@ -23,7 +23,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="sks">Jumlah SKS</label>
-                                    <input type="sks" class="form-control" id="sks" value="{{ $lesson->sks }}">
+                                    <input type="sks" name="sks" class="form-control" id="sks" value="{{ $lesson->sks }}">
                                     @error('sks')
                                         <div class="alert alert-danger">
                                             {{ $message }}
@@ -32,7 +32,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="lecturer_id">Nama Dosen</label>
-                                    <select name="lecturer_id" id="" class="form-control">
+                                    <select name="lecturer_id" id="lecturer_id" class="form-control" name="lecturer_id">
                                         <option value="">--Silahkan Pilih Dosen--</option>
                                         @forelse ($lecturer as $item)
                                             @if ($item->id === $lesson->lecturer_id)
@@ -51,7 +51,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="faculty_id">Nama Fakultas</label>
-                                    <select name="faculty_id" id="" class="form-control">
+                                    <select name="faculty_id" id="faculty_id" class="form-control" >
                                         <option value="">--Silahkan Pilih Dosen--</option>
                                         @forelse ($faculty as $item)
                                             @if ($item->id === $lesson->faculty_id)

@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use app\Models\Lesson;
-use app\Models\Lecturer;
-use app\Models\Faculty;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Models\Lesson;
+use App\Models\Lecturer;
+use App\Models\Faculty;
 
 class LessonController extends Controller
 {
@@ -16,30 +15,20 @@ class LessonController extends Controller
      */
     public function index()
     {
-        $lesson = Lesson::all();
+        $lesson = Lesson::get();
         return view('lesson.index', compact('lesson'));
-
-
-        // // Belum dibuatkan data dari table relasi
-        // $lesson = DB::table('lessons')->get();
-        // return view('lesson.index', compact('lesson'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function create()
     {
         $lecturer = Lecturer::get();
         $faculty = Faculty::get();
 
-        return view('lesson.index', compact('lecturer', 'faculty'));
-
-
-        // // Belum dibuatkan data dari table relasi
-        // return view('lesson.create');
+        return view('lesson.create', compact('lecturer', 'faculty'));
     }
 
     /**
@@ -50,16 +39,16 @@ class LessonController extends Controller
     {
         $request->validate([
             'lecturer_id' => 'required',
-            'faculty_id' => 'required',
             'lesson' => 'required',
             'sks' => 'required',
+            'faculty_id' => 'required',
         ]);
 
         $lesson = new Lesson;
         $lesson->lecturer_id = $request->lecturer_id;
-        $lesson->faculty_id = $request->faculty_id;
         $lesson->lesson = $request->lesson;
         $lesson->sks = $request->sks;
+        $lesson->faculty_id = $request->faculty_id;
 
         $lesson->save();
 
@@ -97,16 +86,16 @@ class LessonController extends Controller
     {
         $request->validate([
             'lecturer_id' => 'required',
-            'faculty_id' => 'required',
             'lesson' => 'required',
             'sks' => 'required',
+            'faculty_id' => 'required',
         ]);
 
         $lesson = Lesson::find($id);
         $lesson->lecturer_id = $request['lecturer_id'];
-        $lesson->faculty_id = $request['faculty_id'];
         $lesson->lesson = $request['lesson'];
         $lesson->sks = $request['sks'];
+        $lesson->faculty_id = $request['faculty_id'];
 
         $lesson->save();
 

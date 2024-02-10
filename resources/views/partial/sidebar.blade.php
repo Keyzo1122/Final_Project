@@ -43,15 +43,7 @@
                 </a>
             </li>
             <li class="sidebar-item">
-                <a class="sidebar-link" href="/lesson" aria-expanded="false">
-                    <span>
-                        <i class="ti ti-cards"></i>
-                    </span>
-                    <span class="hide-menu">Mata Kuliah</span>
-                </a>
-            </li>
-            <li class="sidebar-item">
-                <a class="sidebar-link" href="#" aria-expanded="false">
+                <a class="sidebar-link" href="/faculty" aria-expanded="false">
                     <span>
                         <i class="ti ti-aperture"></i>
                     </span>
@@ -67,7 +59,15 @@
                 </a>
             </li>
             <li class="sidebar-item">
-                <a class="sidebar-link" href="#" aria-expanded="false">
+                <a class="sidebar-link" href="/lesson" aria-expanded="false">
+                    <span>
+                        <i class="ti ti-cards"></i>
+                    </span>
+                    <span class="hide-menu">Mata Kuliah</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="/grade" aria-expanded="false">
                     <span>
                         <i class="ti ti-typography"></i>
                     </span>

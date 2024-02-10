@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FacultyController;
+use App\Http\Controllers\GradeController;
 use App\Http\Controllers\NipController;
 use App\Http\Controllers\LectureController;
 use App\Http\Controllers\LessonController;
@@ -34,3 +36,5 @@ Route::get('/lecture/{id}', [NipController::class, "detail"]);
 
 
 Route::resource('lesson', LessonController::class);
+Route::resource('faculty', FacultyController::class);
+Route::resource('grade', GradeController::class);

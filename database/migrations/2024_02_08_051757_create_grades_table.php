@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('colleger_id')->constrained();
             $table->foreignId('lesson_id')->constrained();
+            $table->string('name');
             $table->string('grade');
             $table->string('semester');
             $table->timestamps();
