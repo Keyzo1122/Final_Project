@@ -40,35 +40,41 @@ class LectureController extends Controller
 
 
     
-    public function edit($id){
-        $lecturersByID = DB::table('lecturers')->find($id);
+    public function edit($id){  
+        $datas = DB::table('lecturers')
+        ->select("lecturers.*","nips.nip as kodenip","nips.id as nipsid")
+        ->join("nips", "nips.id", "=", "lecturers.nip_id")
+        ->where("lecturers.id", $id)
+        ->get();
+        // dd($datas[0]);
         return view("lectureEdit", [
-            "lecturersByID" => $lecturersByID
+            "datas" => $datas
         ]);
     }
     public function update($id, Request $request){
-        DB::table('cast')->where('id', $id)
+        // dd($request);
+        DB::table('nips')->where('id', $request["nipsid"])
         ->update([
-            'nama'=>$request["castName"]
-            ,'umur'=>$request["castUmur"]
-            ,'bio'=>$request["castBio"]
+            'nip'=>$request["nipsnip"]
+            ,'name'=>$request["nipsName"]
         ]);
-        return redirect('/cast');
+        DB::table('lecturers')->where('id', $id)
+        ->update([
+            'name'=>$request["nipsName"]
+            ,'phone_number'=>$request["lecturersPhone"]
+            ,'address'=>$request["lecturersAddress"]
+        ]);
+        return redirect('/lecture');
     }
     
 
 
     public function destroy($id){
-        $del = DB::table('cast')->where('id', $id)->delete();
-        return redirect('/cast');
-    }
-
-
-
-    public function show($id){
-        $castByID = DB::table('cast')->find($id);
-        return view("castDetail", [
-            "cast" => $castByID
-        ]);
+        $idnip = DB::table('lecturers')->select("lecturers.nip_id")->where("lecturers.id", $id)
+        ->value("lecturers.nip_id");
+        // dd($idnip); 
+        DB::table('lecturers')->where('id', $id)->delete();
+        DB::table('nips')->where('id', $idnip)->delete();
+        return redirect('/lecture');
     }
 }

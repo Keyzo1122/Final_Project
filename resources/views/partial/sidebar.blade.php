@@ -27,7 +27,7 @@
                 <span class="hide-menu">Nilai Mahasiswa</span>
             </li>
             <li class="sidebar-item">
-                <a class="sidebar-link" href="#" aria-expanded="false">
+                <a class="sidebar-link" href="/nip" aria-expanded="false">
                     <span>
                         <i class="ti ti-article"></i>
                     </span>
@@ -35,7 +35,7 @@
                 </a>
             </li>
             <li class="sidebar-item">
-                <a class="sidebar-link" href="#" aria-expanded="false">
+                <a class="sidebar-link" href="/lecture" aria-expanded="false">
                     <span>
                         <i class="ti ti-user"></i>
                     </span>

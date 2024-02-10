@@ -1,7 +1,6 @@
 @extends('layouts.master')
-@section('judul','Lecture Index')
+@section('judul','Lecture Detail')
 @section('content')
-  <a href="/lecture/create" class="btn btn-primary btn-sm">Tambah Dosen</a>
   <table class="table">
       <thead>
         <tr>
