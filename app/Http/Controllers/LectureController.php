@@ -7,21 +7,28 @@ use Illuminate\Support\Facades\DB;
 
 class LectureController extends Controller
 {
+    /**
+     * Display a listing of lecture.
+     *
+     */
     public function index(){
         $datas = DB::table('lecturers')
         ->select("lecturers.*","nips.nip as kodenip")
         ->join("nips", "nips.id", "=", "lecturers.nip_id")
         ->get();
         // dd($datas);
-        return view("lectureIndex", [
+        return view("lecture.lectureIndex", [
             "datas" => $datas
         ]);
     }
 
 
-
+    /**
+     * Store a newly lecture data.
+     *
+     */
     public function create(){
-        return view("lectureRegist");
+        return view("lecture.lectureRegist");
     }
     public function regis(Request $request){
         DB::table('nips')->insert([
@@ -39,7 +46,10 @@ class LectureController extends Controller
     }
 
 
-    
+    /**
+     * Update selected lecture's data.
+     *
+     */
     public function edit($id){  
         $datas = DB::table('lecturers')
         ->select("lecturers.*","nips.nip as kodenip","nips.id as nipsid")
@@ -47,7 +57,7 @@ class LectureController extends Controller
         ->where("lecturers.id", $id)
         ->get();
         // dd($datas[0]);
-        return view("lectureEdit", [
+        return view("lecture.lectureEdit", [
             "datas" => $datas
         ]);
     }
@@ -68,7 +78,10 @@ class LectureController extends Controller
     }
     
 
-
+    /**
+     * Delete Selected lecture's data.
+     *
+     */
     public function destroy($id){
         $idnip = DB::table('lecturers')->select("lecturers.nip_id")->where("lecturers.id", $id)
         ->value("lecturers.nip_id");

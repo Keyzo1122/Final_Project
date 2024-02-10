@@ -1,8 +1,8 @@
 @extends('layouts.master')
 @section('judul', 'Lecture Index')
 @section('content')
-    <a href="/lecture/create" class="btn btn-primary btn-sm">Tambah Dosen</a>
-    <table class="table">
+    <a href="/lecture/create" class="btn btn-primary btn-sm">Tambah Dosen</a><br><br>
+    <table id="fDataTable" class="table">
         <thead>
             <tr>
                 <th scope="col">#</th>

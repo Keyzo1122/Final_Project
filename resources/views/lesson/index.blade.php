@@ -2,8 +2,8 @@
 
 @section('judul', 'Mata Kuliah')
 @section('content')
-    <a href="/lesson/create" class="btn btn-primary my-2">Tambah Mata Kuliah Baru</a>
-    <table class="table">
+    <a href="/lesson/create" class="btn btn-primary my-2">Tambah Mata Kuliah Baru</a><br><br>
+    <table id="fDataTable" class="table">
         <thead class="thead-light">
             <tr>
                 <th scope="col">#</th>

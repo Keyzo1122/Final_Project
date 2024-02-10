@@ -7,18 +7,25 @@ use Illuminate\Support\Facades\DB;
 
 class NipController extends Controller
 {
+    /**
+     * Display a listing of Nip data.
+     *
+     */
     public function index(){
         $datas = DB::table('nips')
         ->select("*")
         ->get();
         // dd($datas);
-        return view("nipIndex", [
+        return view("nip.nipIndex", [
             "datas" => $datas
         ]);
     }
 
 
-
+    /**
+     * Display detailed selected of Nip data.
+     *
+     */
     public function detail($id){        
         $datas = DB::table('lecturers')
         ->select("lecturers.*","nips.nip as kodenip")
@@ -26,7 +33,7 @@ class NipController extends Controller
         ->where("nips.id", $id)
         ->get();
         // dd($datas);
-        return view("lectureDetail", [
+        return view("lecture.lectureDetail", [
             "datas" => $datas
         ]);
     }

@@ -2,8 +2,8 @@
 
 @section('judul', 'Nilai')
 @section('content')
-    <a href="/grade/create" class="btn btn-primary  my-2">Tambah Data</a>
-    <table class="table">
+    <a href="/grade/create" class="btn btn-primary  my-2">Tambah Data</a><br><br>
+    <table id="fDataTable" class="table">
         <thead class="thead-light">
             <tr>
                 <th scope="col">#</th>

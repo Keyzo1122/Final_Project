@@ -7,6 +7,10 @@
     <title>@yield('judul')</title>
     <link rel="shortcut icon" type="image/png" href="{{ asset('/template/src/images/logos/favicon.png') }}" />
     <link rel="stylesheet" href="{{ asset('/template/src/assets/css/styles.min.css') }}" />
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <script defer src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script defer src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 </head>
 
 <body>
@@ -76,6 +80,7 @@
     <script src="{{ asset('template/src/assets/libs/apexcharts/dist/apexcharts.min.js') }}"></script>
     <script src="{{ asset('template/src/assets/libs/simplebar/dist/simplebar.js') }}"></script>
     <script src="{{ asset('template/src/assets/js/dashboard.js') }}"></script>
+    <script defer src="{{ asset('template/src/assets/js/dataTable.js') }}"></script>
 </body>
 
 </html>
