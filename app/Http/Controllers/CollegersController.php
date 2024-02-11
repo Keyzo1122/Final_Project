@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Models\Faculty;
 use App\Models\Colleger;
-use File;
+use Illuminate\Support\Facades\DB;
 
 class CollegersController extends Controller
 {
@@ -23,8 +22,8 @@ class CollegersController extends Controller
 
     public function index()
     {
-        $collegers = Colleger::get();
-        return view('collegers.index', ['collegers' => $collegers]);
+        $colleger = Colleger::get();
+        return view('colleger.index', ['colleger' => $colleger]);
     }
 
     /**
@@ -35,7 +34,7 @@ class CollegersController extends Controller
     public function create()
     {
         $faculty = Faculty::get();
-        return view('collegers.create', ['collegers' => $faculty]);
+        return view('colleger.create', ['colleger' => $faculty]);
     }
 
     /**
@@ -54,17 +53,17 @@ class CollegersController extends Controller
 
         ]);
 
-        $collegers = new Colleger;
+        $colleger = new Colleger;
  
-        $collegers->nim = $request->nim;
-        $collegers->name = $request->name;
-        $collegers->address = $request->address;
-        $collegers->faculty_id = $request->faculty_id;
+        $colleger->nim = $request->nim;
+        $colleger->name = $request->name;
+        $colleger->address = $request->address;
+        $colleger->faculty_id = $request->faculty_id;
 
  
-        $collegers->save();
+        $colleger->save();
  
-        return redirect('/collegers');
+        return redirect('/colleger');
     }
 
     /**
@@ -75,8 +74,8 @@ class CollegersController extends Controller
      */
     public function show($id)
     {
-        $collegers = Colleger::find($id);
-        return view('collegers.detail', ['collegers' => $collegers]);
+        $colleger = Colleger::find($id);
+        return view('colleger.detail', ['colleger' => $colleger]);
     }
 
     /**
@@ -87,10 +86,10 @@ class CollegersController extends Controller
      */
     public function edit($id)
     {
-        $collegers = Colleger::find($id);
+        $colleger = Colleger::find($id);
         $faculty = Faculty::get();
 
-        return view('collegers.edit', ['collegers' => $collegers, 'faculty' => $faculty]);
+        return view('colleger.edit', ['colleger' => $colleger, 'faculty' => $faculty]);
     }
 
     /**
@@ -115,11 +114,11 @@ class CollegersController extends Controller
             $collegers->nim = $request['nim'];
             $collegers->name = $request['name'];
             $collegers->address = $request['address'];
-            $collegers->collegers_id = $request['collegers_id'];
+            $collegers->colleger_id = $request['colleger_id'];
          
             $collegers->save();
      
-            return redirect('/collegers');
+            return redirect('/colleger');
 
     }
 

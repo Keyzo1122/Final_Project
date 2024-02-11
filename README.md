@@ -15,4 +15,6 @@ Tema : Website Perekapan Nilai Mahasiswa
 ![ERD Website Perekapan Nilai Mahasiswa](public/erd.jpg)
 
 
-## Link Video Penjelasan 
+## Link Video Demo 
+Video Demo dapat diakses pada url berikut :
+https://drive.google.com/file/d/1PgMRk3bn7O_U_SnF5bS1PHy69XVIXGAN/view?usp=sharing

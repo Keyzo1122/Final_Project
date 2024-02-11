@@ -43,4 +43,4 @@ Route::get('/lecture/{id}', [NipController::class, "detail"])->middleware('auth'
 Route::resource('lesson', LessonController::class)->middleware('auth');
 Route::resource('faculty', FacultyController::class)->middleware('auth');
 Route::resource('grade', GradeController::class)->middleware('auth');
-Route::resource('collegers', CollegersController::class);
+Route::resource('colleger', CollegersController::class);

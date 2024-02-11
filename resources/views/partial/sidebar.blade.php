@@ -51,7 +51,7 @@
                 </a>
             </li>
             <li class="sidebar-item">
-                <a class="sidebar-link" href="/collegers" aria-expanded="false">
+                <a class="sidebar-link" href="/colleger" aria-expanded="false">
                     <span>
                         <i class="ti ti-users"></i>
                     </span>
