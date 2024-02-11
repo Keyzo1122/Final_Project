@@ -24,17 +24,23 @@ Route::get('/', function () {
 });
 
 
-Route::get('/lecture', [LectureController::class, "index"]);
-Route::get('/lecture/create', [LectureController::class, "create"]);
-Route::post('/api/lecture/create', [LectureController::class, "regis"]);
-Route::get('/lecture/{id}/edit', [LectureController::class, "edit"]);
-Route::post('/api/lecture/{id}/edit', [LectureController::class, "update"]);
-Route::get('/api/lecture/{id}/del', [LectureController::class, "destroy"]);
-
-Route::get('/nip', [NipController::class, "index"]);
-Route::get('/lecture/{id}', [NipController::class, "detail"]);
+Route::get('/login', [AuthController::class, 'viewLogin'])->name('login');
+Route::post('/api/postLogin', [AuthController::class, 'postLogin']);
+Route::post('/api/logout', [AuthController::class, 'logout'])->middleware('auth');
 
 
-Route::resource('lesson', LessonController::class);
-Route::resource('faculty', FacultyController::class);
-Route::resource('grade', GradeController::class);
+Route::get('/lecture', [LectureController::class, "index"])->middleware('auth');
+Route::get('/lecture/create', [LectureController::class, "create"])->middleware('auth');
+Route::post('/api/lecture/create', [LectureController::class, "regis"])->middleware('auth');
+Route::get('/lecture/{id}/edit', [LectureController::class, "edit"])->middleware('auth');
+Route::post('/api/lecture/{id}/edit', [LectureController::class, "update"])->middleware('auth');
+Route::get('/api/lecture/{id}/del', [LectureController::class, "destroy"])->middleware('auth');
+
+
+Route::get('/nip', [NipController::class, "index"])->middleware('auth');
+Route::get('/lecture/{id}', [NipController::class, "detail"])->middleware('auth');
+
+
+Route::resource('lesson', LessonController::class)->middleware('auth');
+Route::resource('faculty', FacultyController::class)->middleware('auth');
+Route::resource('grade', GradeController::class)->middleware('auth');
