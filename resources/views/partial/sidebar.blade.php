@@ -10,7 +10,7 @@
     <!-- Sidebar navigation-->
     <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
         <ul id="sidebarnav">
-            <li class="nav-small-cap">
+            {{-- <li class="nav-small-cap">
                 <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                 <span class="hide-menu">Home</span>
             </li>
@@ -21,7 +21,7 @@
                     </span>
                     <span class="hide-menu">Dashboard</span>
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-small-cap">
                 <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                 <span class="hide-menu">Nilai Mahasiswa</span>
@@ -74,7 +74,7 @@
                     <span class="hide-menu">Nilai</span>
                 </a>
             </li>
-            <li class="nav-small-cap">
+            {{-- <li class="nav-small-cap">
                 <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                 <span class="hide-menu">AUTH</span>
             </li>
@@ -93,7 +93,7 @@
                     </span>
                     <span class="hide-menu">Register</span>
                 </a>
-            </li>
+            </li> --}}
         </ul>
     </nav>
     <!-- End Sidebar navigation -->

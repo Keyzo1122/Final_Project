@@ -4,5 +4,6 @@
 
 
 @section('content')
-    <h3>Ini Adalah Halaman Dashboard</h3>
+<h3>Selamat Datang di Website Perekapan Mahasiswa</h3>
+<h5>Silahkan pilih menu yang ada di bagian Kiri </h5>
 @endsection

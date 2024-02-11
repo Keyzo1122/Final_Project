@@ -19,7 +19,7 @@
                     <td>{{ $key + 1 }}</td>
                     <td>{{ $value->name }}</td>
                     <td>{{ $value->grade }}</td>
-                    <td>{{ $value->major }}</td>
+                    <td>{{ $value->semester }}</td>
                     <td>
                         <a href="/grade/{{ $value->id }}" class="btn btn-info btn-sm" style="display: inline;">Show</a>
                             <a href="/grade/{{ $value->id }}/edit" class="btn btn-warning btn-sm"

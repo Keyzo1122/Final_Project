@@ -28,7 +28,6 @@ class DatabaseSeeder extends Seeder
             'nip'=>'0303980303240002'
             ,'name'=>'Admin Utama'
         ]);
-
         DB::table('lecturers')->insert([
             'nip_id'=>DB::getPdo()->lastInsertId()
             ,'name'=>'Admin Utama'
@@ -36,8 +35,19 @@ class DatabaseSeeder extends Seeder
             ,'address'=>'Graha Maju Jl. Lurus No.69'
         ]);
 
+        DB::table('nips')->insert([
+            'nip'=>'0101980101240002'
+            ,'name'=>'Sponge Bob'
+        ]);
+        DB::table('lecturers')->insert([
+            'nip_id'=>DB::getPdo()->lastInsertId()
+            ,'name'=>'Sponge Bob'
+            ,'phone_number'=>'089687654321'
+            ,'address'=>'Graha Laut Jl. Nanas No.69'
+        ]);
+
         DB::table('facultys')->insert([
-            'faculty'=>'Fakultas Teknologi Elektronika dan Informatika Cerdas'
+            'faculty'=>'Teknologi Elektronika dan Informatika Cerdas'
             ,'major'=>'Teknik Informatika'
         ]);
 
@@ -46,6 +56,18 @@ class DatabaseSeeder extends Seeder
             ,'nim'=>'029100001'
             ,'name'=>'Subkhan Dimas Pratama Putra'
             ,'address'=>'Jl. Teknik Informatika No.1'
+        ]);
+        DB::table('collegers')->insert([
+            'faculty_id'=>1
+            ,'nim'=>'029100002'
+            ,'name'=>'Muhammad Ilham'
+            ,'address'=>'Jl. Teknik Informatika No.2'
+        ]);
+        DB::table('collegers')->insert([
+            'faculty_id'=>1
+            ,'nim'=>'029100003'
+            ,'name'=>'M Z Alfathan R'
+            ,'address'=>'Jl. Teknik Informatika No.3'
         ]);
 
         DB::table('lessons')->insert([
@@ -60,6 +82,20 @@ class DatabaseSeeder extends Seeder
             ,'lesson_id'=>1
             ,'name'=>'Subkhan Dimas Pratama Putra'
             ,'grade'=>'A'
+            ,'semester'=>'8'
+        ]);
+        DB::table('grades')->insert([
+            'colleger_id'=>1
+            ,'lesson_id'=>1
+            ,'name'=>'Muhammad Ilham'
+            ,'grade'=>'AB'
+            ,'semester'=>'8'
+        ]);
+        DB::table('grades')->insert([
+            'colleger_id'=>1
+            ,'lesson_id'=>1
+            ,'name'=>'M Z Alfathan R'
+            ,'grade'=>'B'
             ,'semester'=>'8'
         ]);
     }
