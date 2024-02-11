@@ -12,7 +12,7 @@ Tema : Website Perekapan Nilai Mahasiswa
 
 
 ## ERD
-![alt text](https://github.com/Keyzo1122/Final_Project/public/template/src/assets/images/profile/erd.jpg)
+![ERD Website Perekapan Nilai Mahasiswa](public/erd.jpg)
 
 
 ## Link Video Penjelasan 
