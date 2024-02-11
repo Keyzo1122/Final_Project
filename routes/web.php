@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CollegersController;
 use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\GradeController;
 use App\Http\Controllers\NipController;
@@ -19,9 +20,7 @@ use App\Http\Controllers\LessonController;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard.index');
-});
+Route::get('/', function () {return view('dashboard.index');})->middleware('auth');
 
 
 Route::get('/login', [AuthController::class, 'viewLogin'])->name('login');
@@ -44,3 +43,4 @@ Route::get('/lecture/{id}', [NipController::class, "detail"])->middleware('auth'
 Route::resource('lesson', LessonController::class)->middleware('auth');
 Route::resource('faculty', FacultyController::class)->middleware('auth');
 Route::resource('grade', GradeController::class)->middleware('auth');
+Route::resource('collegers', CollegersController::class);
