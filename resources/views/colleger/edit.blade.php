@@ -17,7 +17,7 @@
 @enderror
   <div class="form-group">
     <label>Nama Mahasiswa</label>
-    <input type="text" name="nim" class="form-control" value="{{$colleger->nim}}">
+    <input type="text" name="name" class="form-control" value="{{$colleger->name}}">
   </div>
   @error('name')
     <div class="alert alert-danger">{{ $message }}</div>
