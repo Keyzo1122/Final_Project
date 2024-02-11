@@ -35,5 +35,32 @@ class DatabaseSeeder extends Seeder
             ,'phone_number'=>'089612345678'
             ,'address'=>'Graha Maju Jl. Lurus No.69'
         ]);
+
+        DB::table('facultys')->insert([
+            'faculty'=>'Fakultas Teknologi Elektronika dan Informatika Cerdas'
+            ,'major'=>'Teknik Informatika'
+        ]);
+
+        DB::table('collegers')->insert([
+            'faculty_id'=>1
+            ,'nim'=>'029100001'
+            ,'name'=>'Subkhan Dimas Pratama Putra'
+            ,'address'=>'Jl. Teknik Informatika No.1'
+        ]);
+
+        DB::table('lessons')->insert([
+            'lecturer_id'=>1
+            ,'faculty_id'=>1
+            ,'lesson'=>'Laravel'
+            ,'sks'=>'4'
+        ]);
+
+        DB::table('grades')->insert([
+            'colleger_id'=>1
+            ,'lesson_id'=>1
+            ,'name'=>'Subkhan Dimas Pratama Putra'
+            ,'grade'=>'A'
+            ,'semester'=>'8'
+        ]);
     }
 }
